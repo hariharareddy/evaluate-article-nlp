@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate Artciles</title>
+</head>
+    <body>
+
+        <header>
+            <div class="nav">
+                Evaluate Articles
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <p>Evaluate news article with Natural Language Processing</p>
+                <form id="inp-form" class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Enter Url https://website.com/news-article" autofocus>
+                    <input id="btn" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            </section>
+
+            <section class="result">
+                <div class="res-holder">
+                    <strong>Analysis Results</strong>
+                    <div id="values"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Developed by Hari Hara Reddy. All rights reserved.</p>
+        </footer>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>
