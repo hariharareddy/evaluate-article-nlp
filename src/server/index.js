@@ -27,8 +27,8 @@ app.listen(8081, function () {
 })
 
 const analyseNlp = async (arg) => {
-    const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=auto&verbose=y&url=${arg.url}`)
     try {
+        const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=auto&verbose=y&url=${arg.url}`)
         const data = await response.json()
         return data
     }
@@ -39,7 +39,6 @@ const analyseNlp = async (arg) => {
 
 app.post('/analyse', (req, res) => {
     const data = req.body;
-    console.log(data);
     analyseNlp(data).then((result) =>{
         res.send(result);
     })
